@@ -55,7 +55,7 @@ internal sealed class ImGuiController : IDisposable
 		ImGui.CreateContext();
 		var io = ImGui.GetIO();
 		io.BackendFlags |= ImGuiBackendFlags.RendererHasVtxOffset;
-		io.ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard;
+		io.ConfigFlags |= ImGuiConfigFlags.NavEnableKeyboard | (ImGuiConfigFlags)64;// | ImGuiConfigFlags.DockingEnable;//DockingEnable not generated in the enum yet
 		io.Fonts.Flags |= ImFontAtlasFlags.NoBakedLines;
 
 		CreateDeviceResources(gd, outputDescription);
