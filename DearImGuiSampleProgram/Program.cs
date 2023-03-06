@@ -76,7 +76,7 @@ internal static class Program
 		_gd.Dispose();
 	}
 
-	private static unsafe void SubmitUI()
+	private static void SubmitUI()
 	{
 		// Demo code adapted from the official Dear ImGui demo program:
 		// https://github.com/ocornut/imgui/blob/master/examples/example_win32_directx11/main.cpp#L172
@@ -185,7 +185,7 @@ internal static class Program
 					ImGui.Checkbox(names[n], ref advanced_opened[n]);
 				}
 
-				// Passing a bool* to BeginTabItem() is similar to passing one to Begin(): the underlying bool will be set to false when the tab is closed.
+				// Passing a ref bool to BeginTabItem() is similar to passing one to Begin(): the underlying bool will be set to false when the tab is closed.
 				if (ImGui.BeginTabBar("MyTabBar", (ImGuiTabBarFlags)advanced_tab_bar_flags))
 				{
 					for (int n = 0; n < advanced_opened.Length; n++)
